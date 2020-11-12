@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct SlateView: View {
-    @ObservedObject var model:Model
+    @EnvironmentObject var model:Model
 
     var body: some View {
         GeometryReader { geometry in
@@ -30,11 +30,14 @@ struct SlateView: View {
 struct SlateView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            MainView(model: Model())
+            MainView()
+                .environmentObject(Model())
                 .previewDevice("iPad Pro (9.7-inch)")
-            MainView(model: Model())
+            MainView()
+                .environmentObject(Model())
                 .previewLayout(.fixed(width: 320, height: 568)) //
-            MainView(model: Model())
+            MainView()
+                .environmentObject(Model())
                 .previewLayout(.fixed(width: 568, height: 320)) // iPhone SE landscape size
         }
     }

@@ -24,7 +24,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             model.restore(from: activity)
         }
         
-        let contentView = MainView(model: model)
+        let contentView = MainView().environmentObject(model)
 
         // Use a UIHostingController as window root view controller.
         if let windowScene = scene as? UIWindowScene {

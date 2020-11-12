@@ -24,7 +24,7 @@ struct SceneEntryView : View {
 }
 
 struct SceneView: View {
-    @ObservedObject var model:Model
+    @EnvironmentObject var model:Model
     
     var body: some View {
         ScrollView {
